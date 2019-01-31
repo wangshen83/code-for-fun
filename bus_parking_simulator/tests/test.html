@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bus in Carpark Simulator test</title>
+    <link rel="stylesheet" href="lib/mocha.css">
+</head>
+<body>
+    <div id="mocha"></div>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	crossorigin="anonymous"></script>
+    <script src="lib/mocha.js"></script>
+    <script src="lib/chai.js"></script>
+    <script src="../js/busParkingSimulator.js"></script>
+    <script>mocha.setup('bdd')</script>
+    <script src="test.js"></script>
+    <script>
+		mocha.globals(['jQuery']);
+		mocha.run();
+	</script>
+</body>
+</html>

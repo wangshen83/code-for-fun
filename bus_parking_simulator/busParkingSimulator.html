@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Bus In Carpark Simulator</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+	integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<h1>Bus In Carpark Simulator</h1>
+		<div class="row">
+			<div class="col-md-6">
+				<form>
+					<div class="form-group">
+						<label for="placecommand">Please input the command</label> 
+						<div class="input-group">
+							<input type="text" class="form-control"
+								id="command" placeholder="Example input: PLACE 0,0,EAST">
+							<span class="input-group-btn">
+								<button class="btn btn-secondary" id="add" type="button">Add</button>
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="commandList">Command List</label> <select multiple=""
+							size="15" class="form-control" id="commandList">
+						</select>
+					</div>
+				</form>
+			</div>
+			<div class="col-md-6">
+				<h5>Output Position</h5>
+			    <div id="result" class="alert alert-success" role="alert">
+				</div>
+				<div id="error" class="alert alert-danger" role="alert">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	crossorigin="anonymous"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/busParkingSimulator.js"></script>
