@@ -1,0 +1,90 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>抽奖</title>
+  <style type="text/css">
+    body {
+		text-align: center; 
+		padding-top: 50px;
+	}
+	#resultPanel {
+		width: 550px; 
+		height: 130px; 
+		padding:50px 0; 
+		background:#ffcccc;
+		border: 2px solid #ff99cc; 
+		margin: 0 auto; 
+	    text-align: center;
+	}
+	#resultString {
+		font-size: 50pt; 
+		font-family: cursive;
+	}
+	#btnPanel {
+		margin-top: 40px;
+	}
+	#beginBtn {
+		font-size: 30px; 
+		padding: 10px 50px;
+	}
+  </style>
+</head>
+<body>
+<h1>幸运大抽奖</h1>
+<div id="resultPanel">
+	<span id="resultString">0</span>
+</div>
+<div id="btnPanel">
+	<input id="beginBtn" type='button' value='抽奖' />
+</div>
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+<script type='text/javascript'>
+  jQuery(document).ready(function($) {
+	  //decide the draw string displaying speed
+	  var intervalTime = 10;
+	  //the timer
+	  var timer;
+	  var isRunning = false;
+	  
+	  //start the timer
+	  function startTimer(){
+		timer = setInterval(updateRndString, intervalTime);
+	  }
+	  
+	  //for 7 digit random number with 0 on the left
+	  function LeftPadWithZeros(number, length)
+	  {
+	    var str = '' + number;
+		while (str.length < length) {
+			str = '0' + str;
+		}
+		return str;
+	  }
+	  
+	  //update the random string
+	  function updateRndString(){
+		var num = "AC" + LeftPadWithZeros(Math.floor(Math.random() * 10000000 + 1), 7) + "-" + Math.floor(Math.random() * 100 + 1);
+		$('#resultString').html(num);
+	  }
+	  
+	  //click event for the button, for start or end the lucky draw
+	  $("#beginBtn").click(function(){
+		if(isRunning){
+			isRunning = false;
+			$('#resultString').css('color','red');
+			$(this).val("抽奖");
+			clearInterval(timer);
+		}else{
+			isRunning = true;
+			$('#resultString').css('color','black');
+			$(this).val("暂停");
+			startTimer();
+		}
+	  });
+  });
+</script>
+</html>
