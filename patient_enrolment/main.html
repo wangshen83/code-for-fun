@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Patient Enrolment</title>
+<link rel="stylesheet" href="css/main.css" media="screen">
+<link rel="Stylesheet" href="css/dojo/flat.css" media="screen">
+<link rel="Stylesheet" type="text/css" href="css/dgrid/css/dgrid.css" media="screen">
+<link rel="Stylesheet" href="css/dgrid/css/skins/skin.css" media="screen">
+</head>
+<body>
+<div class="patientEnrol">
+<form data-dojo-type="dojox/form/Manager" id="myForm">
+	<fieldset data-dojo-attach-point="part1">
+	<legend>Enrolments</legend>
+	<div id="enrolPanel">
+	    <div id="enrolmentList">
+	    	<div id="noEnrol" class="ele">
+				<p style="float: left;">Patient has no enrolments</p>
+			</div>
+			<div id="list" class="ele">
+		    </div>
+			<div style="float: right;" class="ele">
+				<button data-dojo-props="'class':'btn-alt'" data-dojo-type="dijit/form/Button" id="addButton" name="add" value="Add">Add</button>
+			</div>
+		</div>
+		<div id="hasEnrol" class="hideDiv">
+		    <div class="ele">
+				<label class="required" for="program">Program</label>
+			    <select id="program" name="program" style="width: 200px;" data-dojo-type="dijit/form/Select" data-dojo-props="required: true">
+			        <option value=""></option>
+				    <option value="1">School Dental Service</option>
+				    <option value="2">High School</option>
+				    <option value="3">Special Needs Program</option>
+				</select>
+			</div>
+			<div class="ele">
+				<label class="required" for="enrolmentDate">Enrolment Date</label>
+				<input type="text" name="enrolmentDate" id="enrolmentDate" value="now"
+				    data-dojo-type="dijit/form/DateTextBox"
+				    data-dojo-props="required: true" />
+			</div>
+			<div id="schoolInfo" class="hideDiv">
+				<div class="ele">
+				    <label for="school">School</label>
+				    <select id="school" name="school" style="width: 200px;" data-dojo-type="dijit/form/Select" data-dojo-props="">
+				        <option value=""></option>
+					    <option value="1">Long Bay College</option>
+					    <option value="2">Rangitoto College</option>
+					</select>
+				</div>
+				<div class="ele">
+					<label for="yearlevel">Year Level</label>
+				    <select id="yearlevel" name="yearlevel" style="width: 200px;" data-dojo-type="dijit/form/Select" data-dojo-props="">
+				        <option value=""></option>
+					    <option value="1">Year 13</option>
+					    <option value="2">Year 12</option>
+					</select>
+				</div>
+				<div class="ele">
+					<label for="year">Year</label>
+				    <select id="year" name="year" style="width: 200px;" data-dojo-type="dijit/form/Select" data-dojo-props="">
+				        <option value=""></option>
+					    <option value="1">2018</option>
+					    <option value="2">2017</option>
+					</select>
+				</div>
+			</div>
+			<div style="float: right;" class="ele">
+				<button data-dojo-props="'class':'btn-alt'" data-dojo-type="dijit/form/Button" id="cancelButton" name="cancel" value="Cancel">Cancel</button>
+				<button data-dojo-props="'class':'btn-alt btn-warning'" data-dojo-type="dijit/form/Button" id="applyButton" name="apply" value="Apply">Apply</button>
+			</div>
+		</div>
+	</div>
+	</fieldset>
+</form>
+</div>
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js" data-dojo-config="async: true"></script> -->
+<script src="dojo-1.14.2/dojo/dojo.js.uncompressed.js" data-dojo-config="async: true"></script>
+<script src="resource/config.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
